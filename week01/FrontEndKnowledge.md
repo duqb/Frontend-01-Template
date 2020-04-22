@@ -1,0 +1,334 @@
+
+## 前端知识体系
+
+- 一、HTML
+  - (一) HTML as 通用计算机语言
+    - 1.语法
+    - 2.词法
+  - (二) HTML as SGML (Standard Generalized)
+      - 1.DTD (Document Type Definition)
+      - 2.Entity (实体)
+        - \&nbsp;
+        - \&copy;
+        - ...
+        - [更多](https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references)
+        
+  - (三) HTML as XML
+      - 1.Namespace
+        - (1) svg
+        - (2) mathml (Mathematical)
+        - (3) aria (无障碍阅读)
+      - 2.Tag
+        - (1) html
+        - (2) head
+        - (3) title
+        - (4) base
+        - (5) link
+        - (6) meta
+        - (7) style
+        - (8) body
+        - (9) article
+        - (10) section
+        - (11) nav
+        - (12) aside
+        - (13) h1
+        - (14) h2
+        - (15) h3
+        - (16) h4
+        - (17) h5
+        - (18) h6
+        - (19) hgroup
+        - (20) header
+        - (21) footer
+        - (22) address
+        - (23) p
+        - (24) hr
+        - (25) pre
+        - (26) blockquote
+        - (27) ol
+        - (28) ul
+        - (29) menu
+        - (30) li
+        - (31) dl
+        - (32) dt
+        - (33) dd
+        - (34) figure
+        - (35) figcaption
+        - (36) main
+        - (37) div
+        - (38) a
+        - (39) em
+        - (40) strong
+        - (41) small
+        - (42) s
+        - (43) cite
+        - (44) q
+        - (45) dfn
+        - (46) abbr
+        - (47) ruby
+        - (48) rt
+        - (49) rp
+        - (50) data
+        - (51) time
+        - (52) code
+        - (53) var
+        - (54) samp
+        - (55) kbd
+        - (56) sub
+        - (57) sup
+        - (58) i
+        - (59) b
+        - (60) u
+        - (61) mark
+        - (62) bdi
+        - (63) bdo
+        - (64) span
+        - (65) br
+        - (66) wbr
+        - (67) a
+        - (68) area
+        - (69) ins
+        - (70) del
+        - (71) picture
+        - (72) source
+        - (73) img
+        - (74) iframe
+        - (75) embed
+        - (76) object
+        - (77) param
+        - (78) video
+        - (79) audio
+        - (80) track
+        - (81) map
+        - (82) area
+        - (83) table
+        - (84) caption
+        - (85) colgroup
+        - (86) col
+        - (87) tbody
+        - (88) thead
+        - (89) tfoot
+        - (90) tr
+        - (91) td
+        - (92) th
+        - (93) form
+        - (94) label
+        - (95) input
+        - (96) button
+        - (97) select
+        - (98) datalist
+        - (99) optgroup
+        - (100) option
+        - (101) textarea
+        - (102) output
+        - (103) progress
+        - (104) meter
+        - (105) fieldset
+        - (106) legend
+        - (107) details
+        - (108) summary
+        - (109) dialog
+        - (110) script
+        - (111) noscript
+        - (112) template
+        - (113) slot
+        - (114) canvas
+        - ... 
+        - [更多](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element)  
+
+- 二、CSS
+  - (一) 语法/词法 （可参考css2.1标准）
+  - (二) @规则
+    - 1.@charset
+    - 2.@import 
+    - 3.@media
+    - 4.@page
+    - 5.@counter-style
+    - 6.@keyframes
+    - 7.@fontface
+    - 8.@supports
+    - 9.@namespace
+  - (三) 普通规则
+    - 1.选择器
+      - (1) 简单选择器 
+        - .class (#id.class与的关系)
+        - #id
+        - tagname
+        - \*
+        - [attr=v]
+      - (2) 复合选择器 
+        - space
+        - \>
+        - \+
+        - \||
+        - \~
+      - (3) 复杂选择器
+        - 子孙关系
+      - (4) 选择器列表 
+    - 2.Property (属性)
+    - 3.Value （值）
+  - (四) 机制
+    - 1.排版
+    - 2.伪元素
+    - 3.动画
+    - 4.优先级
+
+- 三、JavaScript
+  - (一) Grammar 
+    - 1.Lexical (词法)
+      - (1) WhiteSpace (空格)
+      - (2) LineTerminator (换行)
+      - (3) Comment (注释)
+      - (4) Token (有效内容)
+        - Identifier（标识符）
+        - Keywords（关键字）
+        - Punctuator（符号）
+        - NumericLiteral（字面值）
+        - StringLiteral
+        - RegularExpressionLiteral
+        - Template 
+    - 2.Syntax (句法)
+      - (1) Atom (原子以上token集合)
+      - (2) Expression（表达式）
+      - (3) Structure（结构）
+      - (4) Script & Module（脚本/模块）
+  - (二) Semantics (语义) 
+  - (三) Runtime (运行时）
+    - 1.Type
+      - (1) Number
+      - (2) String
+      - (3) Boolean
+      - (4) Null
+      - (5) Undefined
+      - (6) Object
+      - (7) Symbol
+      - (8) Bigint (草稿)
+      - (9) 内部类型
+        - Reference 
+        - Completion Record
+        - RangeError
+        - EvalError
+        - SyntaxError
+        - TypeError
+        - URLError
+        - Global
+        - Math
+        - List
+        - Data Block
+        - Property Descript and Property Identifier (属性描述/标识)
+        - Lexical Environment and Environment Record (词法环境/记录)
+        - ...
+    - 2.执行过程 (从大到小且有边界)
+      - (1) Job
+      - (2) Script/Module
+      - (3) Promise
+      - (4) Function
+      - (5) Statement
+      - (6) Expression
+      - (7) Literal
+      - (8) Identifier
+
+- 四、API
+  - (一) Browser
+    - 1.DOM
+      - (1) Nodes (与html相对应)
+        - 属性
+           - baseURI
+           - baseURIObject
+           - childNodes
+           - firstChild
+           - isConnected
+           - lastChild
+           - nextSibling
+           - nodeName
+           - nodeType
+           - nodeValue
+           - outerText
+           - ownerDocument
+           - parentElement
+           - parentNode
+           - previousSibling
+           - textContent
+        - 方法
+            - appendChild
+            - cloneNode
+            - compareDocumentPosition
+            - contains
+            - getRootNode
+            - hasChildNodes
+            - insertBefore
+            - isDefaultNamespace
+            - isEqualNode
+            - isSameNode
+            - lookupNamespaceURI
+            - lookupPrefix
+            - normalize
+            - removeChild
+            - replaceChild
+      - (2) Ranges
+        - 属性
+          - collapsed
+          - commonAncestorContainer
+          - endContainer
+          - endOffset
+          - startContainer
+          - startOffset
+        - 方法
+          - cloneContents
+          - cloneRange
+          - collapse
+          - compareBoundaryPoints
+          - comparePoint
+          - createContextualFragment
+          - deleteContents
+          - detach
+          - extractContents
+          - getBoundingClientRect
+          - getClientRects
+          - insertNode
+          - intersectsNode
+          - isPointInRange
+          - selectNode
+          - selectNodeContents
+          - setEnd
+          - setEndAfter
+          - setEndBefore
+          - setStart
+          - setStartAfter
+          - setStartBefore
+          - surroundContents
+          - toString
+      - (3) Events
+        - 属性
+          - bubbles
+          - cancelable
+          - cancelBubble
+          - composed
+          - currentTarget
+          - defaultPrevented
+          - eventPhase
+          - explicitOriginalTarget
+          - isTrusted
+          - originalTarget
+          - returnValue
+          - srcElement
+          - target
+          - timeStamp
+          - type
+        - 方法
+          - composedPath
+          - createEvent
+          - initEvent
+          - msConvertURL
+          - preventDefault
+          - stopImmediatePropagation
+          - stopPropagation
+    - 2.BOM
+      - (1) Window
+      - (2) location
+      - (3) navigator
+      - (4) screen
+      - (5) history
+  - (二) Node
+  - (三) Electron
+  - (四) 小程序
