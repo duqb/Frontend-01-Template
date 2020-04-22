@@ -8,7 +8,7 @@
 
 ### 前端知识体系
 
-[前端知识体系思维导图](https://FrontEndKnowledge.md)
+[前端知识体系思维导图](https://github.com/duqb/Frontend-01-Template/blob/master/week01/FrontEndKnowledge.md)
 
 Reference:
 * https://www.w3.org/
