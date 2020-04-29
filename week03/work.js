@@ -42,8 +42,39 @@ function convertNumberToString(number, x) {
 
 
 /**
- * 找出 JavaScript 标准里有哪些对象是我们无法实现出来的，都有哪些特性？写一篇文章，放在学习总结里。
+ * 找出 JavaScript 标准里有哪些对象是我们无法实现出来的，都有哪些特性？
  */
 
-// 放在了总结中
+/*
+
+Bound Function Exotic Objects 
+
+ [[Call]]   [[Construct]]  
+
+Array Exotic Objects 
+
+ [[DefineOwnProperty]]   ArrayCreate(length[,proto])   ArraySpeciesCreate(originalArray,length)   ArraySetLength(A,Desc)  
+
+String Exotic Objects 
+
+ [[GetOwnProperty]]   [[DefineOwnProperty]]   [[OwnPropertyKeys]]   StringCreate(value,prototype)   StringGetOwnProperty(S,P)  
+
+Arguments Exotic Objects 
+
+ [[GetOwnProperty]]   [[DefineOwnProperty]]   [[Get]]   [[Set]]   [[Delete]]   CreateUnmappedArgumentsObject(argumentsList)   CreateMappedArgumentsObject(func,formals,argumentsList,env)  
+
+Integer-Indexed Exotic Objects 
+
+ [[GetOwnProperty]]   [[HasProperty]]   [[DefineOwnProperty]]   [[Get]]   [[Set]]   [[OwnPropertyKeys]]   IntegerIndexedObjectCreate(prototype,internalSlotsList)   IntegerIndexedElementGet(O,index)   IntegerIndexedElementSet(O,index,value)  
+
+Module Namespace Exotic Objects 
+
+ [[SetPrototypeOf]]   [[IsExtensible]]   [[PreventExtensions]]   [[GetOwnProperty]]   [[DefineOwnProperty]]   [[HasProperty]]   [[Get]]   [[Set]]   [[Delete]]   [[OwnPropertyKeys]]   ModuleNamespaceCreate(module,exports)  
+
+Immutable Prototype Exotic Objects 
+
+  [[SetPrototypeOf]]   SetImmutablePrototype  
+
+*/
+
 
