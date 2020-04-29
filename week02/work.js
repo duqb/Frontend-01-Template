@@ -1,7 +1,6 @@
-
 // 匹配所有 Number 直接量
 function isNumber(str) {
-  let result = /(^-?\d+(\.\d+)?$)|(^[01]+$)|(^[0-7]+$)|(^0[xX][0-9a-fA-F]+$)/;
+  let result = /(^[01]+$)|(^[0-7]+\$)|(^-?\d+(\.\d+)?$)|(^0[xX][0-9a-fA-F]+$)/;
   return result.test(str);
 }
 
@@ -34,11 +33,13 @@ function UTF8_Encoding(str) {
   return resultstr;
 }
 
-// 匹配所有的字符串直接量，单引号和双引号
+// 匹配所有的字符串直接量
 function isString(str) {
   let result = /(^\'[\s\S]*[\w\W]*[\d\D]*\'$)|(^\"[\s\S]*[\w\W]*[\d\D]*\"$)|(^\`[\s\S]*[\w\W]*[\d\D]*\`$)/
   return result.test(str);
 }
+
+
 
 
 

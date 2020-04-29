@@ -202,8 +202,7 @@
       - (5) Undefined
       - (6) Object
       - (7) Symbol
-      - (8) Bigint (草稿)
-      - (9) 内部类型
+      - (8) 内部类型
         - Reference 
         - Completion Record
         - RangeError

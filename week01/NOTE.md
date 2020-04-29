@@ -8,9 +8,9 @@
 
 ### 前端知识体系
 
-[前端知识体系思维导图](https://github.com/duqb/Frontend-01-Template/blob/master/week01/FrontEndKnowledge.md)
+[前端知识体系思维导图](https://github.com/duqb/Frontend-01-Template/blob/master/week01/FrontEndKnowledge.html)
 
-Reference:
+**Reference:**
 * https://www.w3.org/
 * http://w3school.com/
 * https://whatwg.org/
@@ -75,7 +75,7 @@ Reference:
 * 模块： 经常被使用的业务区块 (例如登录)
 
 
-**Reference:**
+Reference:
 * https://fed.taobao.org/blog/taofed/do71ct/fed-learning-quizzes-apply/?spm=taofed.blogs.blog-list.9.44fe5ac8p6qg66
 * https://tools.ietf.org/html/rfc3986
 * https://svn.apache.org/repos/asf/labs/webarch/trunk/uri/rev-2002/issues.html
