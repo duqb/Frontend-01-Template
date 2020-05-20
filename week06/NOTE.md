@@ -7,7 +7,7 @@
 
 * 每一个状态都是一个机器
   * 每一个机器里，可以做计算，存储，输出...
-  * 所有机器接的收输入是一致的
+  * 所有机器接受的输入是一致的
   * 状态机的每一个机器本身没有状态，如果我们用函数来表示的话，它应该是纯函数（无副作用）
 * 每一个机器知道下一个状态
   * 每个机器都有确定的下一个状态是 Moore 状态机
@@ -32,8 +32,6 @@ while(input){
 }
 ```
 
-
-
 ## 浏览器工作原理 ：HTTP协议与语法词法分析
 
 #### HTML解析
@@ -43,7 +41,7 @@ while(input){
   parser接受html文本作为参数，返回一颗DOM树
 
 第二步：创建状态机（initFSM） [参考](https://html.spec.whatwg.org/multipage/parsing.html#before-attribute-name-state)
-  * 参考：html.spec.whatwg.org: 12.2.5 Tokenization （直接写出了伪代码）
+  * 参考：html.spec.whatwg.org: 12.2.5 Tokenization （已经直接写出了伪代码）
   * 用FSM(有限状态机)实现HTML的分析
   * 在html标准中已经规定了html的状态
   * toy-browser只选其中一部分状态，完成一个最简版本
@@ -69,7 +67,6 @@ while(input){
 第七步：文本节点（combineText）
   * 文本节点与自封闭标签处理类似
   * 多个文本节点需要合并
-
 
 
 ## 浏览器工作原理 ：CSS计算，排版，渲染，合成
