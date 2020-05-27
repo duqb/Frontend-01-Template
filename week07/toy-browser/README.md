@@ -4,17 +4,17 @@
 clone toy-browser directory
 
 ```
-npm install
+$ npm install
 ```
 
 ### start server 
 
 ```
-node server.js
+$ node server.js
 ```
 
 ### start client 
 
 ```
-node client.js
+$ node client.js
 ```
