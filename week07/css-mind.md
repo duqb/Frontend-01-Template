@@ -1,0 +1,49 @@
+
+- 二、CSS
+  - (一) 语法/词法 （可参考css2.1标准）
+  - (二) at-rule (@规则)
+    - 1.@media
+    - 2.@import 
+    - 3.@charset
+    - 4.@font-face
+    - 5.@keyframes
+    - 6.@page
+    - 7.@supports
+    - 8.@viewport
+    - 9.@namespace
+    - 10.@document
+    - 11.@counter-style
+    - 12.@font-feature-values
+  - (三) rule（普通规则）
+    - 1.Selector（选择器）
+      - (1) simple_selector (简单选择器)
+        - .class
+        - #id
+        - tagname
+        - \*
+        - [attr=v]
+        - :
+        - ::
+        - :not
+        - type
+      - (2) combinator (复合选择器)
+        - space
+        - \>
+        - \+
+        - - \~
+        - \||
+      - (3) selector_group (复杂选择器)
+        - 子孙关系
+      - (4) 选择器列表
+    - 2.declaration 
+      - Key 
+        - properties（属性）
+        - variables (变量)
+      - Value
+  - (四) 机制
+    - 1.排版
+    - 2.伪元素
+    - 3.动画
+    - 4.优先级
+
+Update to: [前端知识体系思维导图](https://github.com/duqb/Frontend-01-Template/blob/master/week01/FrontEndKnowledge.md)

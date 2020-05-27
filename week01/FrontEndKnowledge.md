@@ -134,39 +134,49 @@
         - (113) slot
         - (114) canvas
         - ... 
-        - [更多](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element)  
+        - [更多](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element) 
 
 - 二、CSS
   - (一) 语法/词法 （可参考css2.1标准）
-  - (二) @规则
-    - 1.@charset
+  - (二) at-rule (@规则)
+    - 1.@media
     - 2.@import 
-    - 3.@media
-    - 4.@page
-    - 5.@counter-style
-    - 6.@keyframes
-    - 7.@fontface
-    - 8.@supports
+    - 3.@charset
+    - 4.@font-face
+    - 5.@keyframes
+    - 6.@page
+    - 7.@supports
+    - 8.@viewport
     - 9.@namespace
-  - (三) 普通规则
-    - 1.选择器
-      - (1) 简单选择器 
-        - .class (#id.class与的关系)
+    - 10.@document
+    - 11.@counter-style
+    - 12.@font-feature-values
+  - (三) rule（普通规则）
+    - 1.Selector（选择器）
+      - (1) simple_selector (简单选择器)
+        - .class
         - #id
         - tagname
         - \*
         - [attr=v]
-      - (2) 复合选择器 
+        - :
+        - ::
+        - :not
+        - type
+      - (2) combinator (复合选择器)
         - space
         - \>
         - \+
+        - - \~
         - \||
-        - \~
-      - (3) 复杂选择器
+      - (3) selector_group (复杂选择器)
         - 子孙关系
-      - (4) 选择器列表 
-    - 2.Property (属性)
-    - 3.Value （值）
+      - (4) 选择器列表
+    - 2.declaration 
+      - Key 
+        - properties（属性）
+        - variables (变量)
+      - Value
   - (四) 机制
     - 1.排版
     - 2.伪元素
