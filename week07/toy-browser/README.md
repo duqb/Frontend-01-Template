@@ -1,7 +1,7 @@
 
 # toy-browser
 
-### clone toy-browser directory
+clone toy-browser directory
 
 ```
 npm install
