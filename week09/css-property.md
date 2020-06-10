@@ -1,0 +1,256 @@
+## CSS Property
+
+- Layout
+  - normal flow
+    - display
+    - position
+    - float
+    - clear
+    - visibility
+    - table-layout
+    - vertical-align
+    - width
+    - height
+    - max-height
+    - max-width
+    - min-height
+    - min-width
+    - top
+    - bottom
+    - left
+    - right
+    - margin-bottom
+    - margin-left
+    - margin-right
+    - margin-top
+    - padding-bottom
+    - padding-left
+    - padding-right
+    - padding-top
+    - overflow-anchor
+    - overflow-wrap
+    - overflow-x
+    - overflow-y
+    - z-index
+  - flex
+    - flex-basis
+    - flex-grow
+    - flex-shrink
+    - flex-direction
+    - flex-wrap
+    - align-content
+    - align-items
+    - align-self
+    - justify-content
+    - justify-items
+    - justify-self
+    - order
+    - row-gap
+  - grids
+    - grid-auto-columns
+    - grid-auto-flow
+    - grid-auto-rows
+    - grid-column-end
+    - grid-column-start
+    - grid-template-areas
+    - grid-template-columns
+    - grid-template-rows
+    - grid-row-end
+    - grid-row-start
+  - multiple-column
+    - column-count
+    - column-gap
+    - column-rule
+    - column-rule-color
+    - column-rule-style
+    - column-rule-width
+    - column-span
+    - column-width
+    - column-fill  //内容如何划分为列
+    - break-after  //生成盒之后如何处理中断
+    - break-before  //生成盒之前如何处理中断
+    - break-inside  //内容盒子如何中断
+- Interactive
+  - scroll-behavior
+  - cursor  //鼠标悬停样式
+  - resize  //元素大小调整
+  - speak  //屏幕阅读
+  - touch-action
+  - pointer-events  //某个特定的图形元素可以成为鼠标事件的 target
+  - zoom  //根据@viewport来初始化一个缩放因数
+  - transform
+    - transform-origin
+    - transform-style
+  - animation
+    - animation-delay
+    - animation-direction
+    - animation-duration
+    - animation-fill-mode
+    - animation-iteration-count
+    - animation-name
+    - animation-play-state
+    - animation-timing-function
+  - transition
+    - transition-delay
+    - transition-duration
+    - transition-property
+    - transition-timing-function
+  - offset
+    - offset-distance
+    - offset-path
+    - offset-rotate
+- Render/Draw
+  - font
+    - font-family
+    - font-kerning
+    - font-optical-sizing
+    - font-size
+    - font-stretch
+    - font-style
+    - font-variant
+    - font-variant-ligatures
+    - font-variant-caps
+    - font-variant-numeric
+    - font-variant-east-asian
+    - font-weight
+  - text
+    - text-align
+    - text-align-last
+    - text-decoration
+    - text-decoration-line
+    - text-decoration-style
+    - text-decoration-color
+    - text-decoration-skip-ink
+    - text-underline-position
+    - text-indent
+    - text-rendering
+    - text-shadow
+    - text-size-adjust
+    - text-overflow
+    - text-transform
+    - word-break
+    - word-spacing
+    - white-space
+    - line-break
+    - caption-side //表格标题位置
+    - letter-spacing //文字间距
+    - hyphens  //换行时如何使用连字符连接单词
+    - color
+    - line-height
+  - background
+    - background-attachment
+    - background-blend-mode
+    - background-clip
+    - background-color
+    - background-image
+    - background-origin
+    - background-position
+    - background-repeat
+    - background-size
+  - border
+    - border-bottom-color
+    - border-bottom-left-radius
+    - border-bottom-right-radius
+    - border-bottom-style
+    - border-bottom-width
+    - border-collapse
+    - border-image-outset
+    - border-image-repeat
+    - border-image-slice
+    - border-image-source
+    - border-image-width
+    - border-left-color
+    - border-left-style
+    - border-left-width
+    - border-right-color
+    - border-right-style
+    - border-right-width
+    - border-top-color
+    - border-top-left-radius
+    - border-top-right-radius
+    - border-top-style
+    - border-top-width
+    - outline-color
+    - outline-offset
+    - outline-style
+    - outline-width
+    - box-shadow
+    - box-sizing 
+- SVG
+  - d
+  - cx
+  - cy
+  - x
+  - y
+  - r
+  - rx
+  - ry 
+  - stroke
+  - stroke-dasharray
+  - stroke-dashoffset
+  - stroke-linecap
+  - stroke-linejoin
+  - stroke-miterlimit
+  - stroke-opacity
+  - stroke-width
+  - marker-end
+  - marker-mid
+  - marker-start
+  - mask
+  - mask-type
+  - fill
+  - fill-opacity
+  - fill-rule
+  - flood-color
+  - flood-opacity
+  - lighting-color
+  - stop-color
+  - stop-opacity
+  - writing-mode
+  - text-anchor
+  - vector-effect
+  - shape-rendering
+  - unicode-bidi
+  - alignment-baseline
+  - baseline-shift
+  - dominant-baseline
+  - direction
+  - clip 废弃
+  - clip-path
+  - clip-rule
+  - color-interpolation
+  - color-interpolation-filters
+  - color-rendering
+  - buffered-rendering
+- Other
+  - opacity  //透明度
+  - filter  //滤镜（模糊或颜色偏移等图形效果）
+  - orphans  //设置区列的底部最小行数
+  - widows //设置区列的顶部最小行数
+  - content  //伪元素(::before 和 ::after)中插入内容
+  - empty-cells  //渲染表格中没有可见内容的单元格的边框和背景
+  - image-orientation  //修正图片的预设方向
+  - image-rendering  //图像缩放算法
+  - isolation  //是否必须创建一个新的层叠上下文
+  - list-style-image  //列表元素图片标记
+  - list-style-position  //指定标记盒在主体块盒子中的位置
+  - list-style-type  //列表元素的标记样式
+  - mix-blend-mode  //元素与直系父元素背景如何混合
+  - object-fit  //元素如何适应宽高确定的框
+  - object-position  //元素在其内容框中的位置
+  - backdrop-filter  //元素后面区域添加图形效果
+  - will-change  //元素会有哪些变化的方法
+  - perspective  //三维位置变换的元素产生透视效果
+  - backface-visibility  //元素背面朝向观察者时是否可见
+  - perspective-origin  //指定观察者的位置
+  - user-select  //控制用户能否选中文本
+  - paint-order  //控制文本区域和图形绘制的填充和绘制顺序
+  - caret-color //义插入光标的颜色
+  - tab-size  //自定义制表符
+  - shape-outside  //相邻的内联内容围绕非矩形的形状进行包装
+  - shape-image-threshold   //设定一个alpha通道的界限值来提取shape-outside值为图像的形状
+  - shape-margin  //设定由shape-outside创建的CSS形状的外边距
+
+
+
+
