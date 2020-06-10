@@ -91,7 +91,7 @@ html中不能出现的字符（需要转意）：
 
 &quot;(引号) &amp;(俺的符) &lt;(小于号) &gt;(大于号）
 
-// white space 使用多个空格不合并, <pre></pre> 或者 style="white-space:pre-wrap"
+// white space 使用多个空格不合并, `<pre></pre>` 或者 style="white-space:pre-wrap"
 
 dtd完整描述了html语言，html5不再支持dtd
 
