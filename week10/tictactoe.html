@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tictactoe | 井字棋</title>
+  </head>
+  <style>
+    #board {
+      width: 350px;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      border: 1px solid white;
+      background-color: green;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 100px;
+      font-size: 50px;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div id="board"></div>
+    <script>
+      let pattern = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+      ];
+      let color = 1;
+
+      function show() {
+        let board = document.getElementById("board");
+        board.innerHTML = "";
+
+        for (let i = 0; i < 3; i++) {
+          for (let j = 0; j < 3; j++) {
+            let cell = document.createElement("div");
+            cell.classList.add("cell");
+            cell.innerHTML =
+              pattern[i][j] == 2 ? "❌" : pattern[i][j] == 1 ? "⭕️" : "";
+
+            cell.addEventListener("click", () => userMove(j, i));
+
+            board.appendChild(cell);
+          }
+          board.appendChild(document.createElement("br"));
+        }
+      }
+
+      function userMove(x, y) {
+        pattern[y][x] = color;
+        if (check(pattern, color)) {
+          alert(color == 2 ? "❌ is winner" : "⭕️ is winner");
+        }
+        color = 3 - color; // color 三种状态
+        show();
+        computerMove();
+      }
+
+      function computerMove() {
+        let choice = bestChoice(pattern, color);
+        if (choice.point) {
+          pattern[choice.point[1]][choice.point[0]] = color;
+        }
+        if (check(pattern, color)) {
+          alert(color == 2 ? "❌ is winner" : "⭕️ is winner");
+        }
+        color = 3 - color;
+        show();
+      }
+
+      // TODO 可以抽出来 向量的方式 加上xy的抽象
+      // 检查是否 win 了
+      function check(pattern, color) {
+        //三行
+        for (let i = 0; i < 3; i++) {
+          let win = true;
+          for (let j = 0; j < 3; j++) {
+            if (pattern[i][j] !== color) {
+              win = false; //判断每行每列只要有一个不一样就设为flse
+            }
+          }
+          if (win) return true;
+        }
+
+        //三列
+        for (let i = 0; i < 3; i++) {
+          let win = true;
+          for (let j = 0; j < 3; j++) {
+            if (pattern[j][i] !== color) {
+              win = false;
+            }
+          }
+          if (win) return true;
+        }
+
+        //斜线
+        {
+          let win = true;
+          for (let j = 0; j < 3; j++) {
+            if (pattern[j][2 - j] !== color) {
+              win = false;
+            }
+          }
+          if (win) return true;
+        }
+
+        //斜线
+        {
+          let win = true;
+          for (let j = 0; j < 3; j++) {
+            if (pattern[j][j] !== color) {
+              win = false;
+            }
+          }
+          if (win) return true;
+        }
+
+        return false;
+      }
+
+      function clone(pattern) {
+        return JSON.parse(JSON.stringify(pattern));
+      }
+
+      //辅助判断快赢了
+      function willWin(pattern, color) {
+        for (let i = 0; i < 3; i++) {
+          for (let j = 0; j < 3; j++) {
+            if (pattern[i][j]) {
+              continue;
+            }
+            let tmp = clone(pattern);
+            tmp[i][j] = color;
+            if (check(tmp, color)) {
+              return [j, i];
+            }
+          }
+        }
+        return null;
+      }
+
+      let openings = new Map();
+      // 类似一个开局库 棋谱
+      openings.set(
+        [
+          [0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0],
+        ].toString() + "1",
+        {
+          point: [1, 1],
+          result: 0,
+        }
+      );
+      openings.set(
+        [
+          [0, 0, 0],
+          [0, 1, 0],
+          [0, 0, 0],
+        ].toString() + "2",
+        {
+          point: [0, 0],
+          result: 0,
+        }
+      );
+
+      function bestChoice(pattern, color) {
+        if (openings.has(pattern.toString() + color)) {
+          return openings.get(pattern.toString() + color);
+        }
+        //如果win 直接走这
+        let point = willWin(pattern, color);
+        if (point) {
+          return {
+            point: point,
+            result: 1,
+          };
+        }
+
+        let result = -1;
+
+        //模拟每个点，从对方的bestChoice选一个对我最有利的
+        outer: for (let i = 0; i < 3; i++) {
+          // for (let i = 0; i < 3; i++) {
+          for (let j = 0; j < 3; j++) {
+            if (pattern[i][j] !== 0) {
+              continue;
+            }
+            let tmp = clone(pattern);
+            tmp[i][j] = color;
+            let opp = bestChoice(tmp, 3 - color);
+            // 对面最坏的情况
+            if (-opp.result >= result) {
+              point = [j, i];
+              result = -opp.result;
+            }
+            // 输赢减枝
+            if (result == 1) {
+              break outer;
+            }
+          }
+        }
+
+        return {
+          point: point,
+          result: point ? result : 0,
+        };
+      }
+
+      show(pattern);
+    </script>
+  </body>
+</html>

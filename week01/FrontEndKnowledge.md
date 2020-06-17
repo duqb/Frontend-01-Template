@@ -640,7 +640,7 @@
       - (3) navigator
       - (4) screen
       - (5) history
-  - (二) Node
+  - (二) Node.js
   - (三) Electron
   - (四) 小程序
 
