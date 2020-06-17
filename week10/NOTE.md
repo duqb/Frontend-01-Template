@@ -31,8 +31,6 @@ Rules
 * document.stylesheet[0].insertRule('p{color:pink;}',0)
 * document.stylesheet[0].removeRule(0)
 
-
-
 Rule
 
 CSSStyleRule
@@ -43,7 +41,6 @@ getComputedStyle
 * window.getComputedStyle(ele,pseudoElt); 
   * ele 想要获取的元素
   * pseudoElt 可选，为元素
-
 
 
 // DOM -> html , CSSOM -> css
@@ -70,10 +67,6 @@ window || document
 .outerHeight();
 
 getBoundingClientReact();
-
-
-
-所有 API 
 
 
 
