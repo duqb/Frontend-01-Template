@@ -1,4 +1,4 @@
-# APIs
+# webAPI
 
 ## ECMA-262
 
