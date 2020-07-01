@@ -31,6 +31,7 @@
       ];
       let color = 1;
 
+      // 画棋盘
       function show() {
         let board = document.getElementById("board");
         board.innerHTML = "";
@@ -177,7 +178,7 @@
         if (point) {
           return {
             point: point,
-            result: 1,
+            result: 1, // 1 胜, 0 平, -1 败
           };
         }
 

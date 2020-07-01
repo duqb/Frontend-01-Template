@@ -25,14 +25,14 @@
     <div id="container"></div>
     <button onclick="localStorage.map=JSON.stringify(map)">save</button>
     <script>
-      /* 
+      /*
       大体步骤：
       1.编辑器
       2.作出路径 true or false
       3.可视化的操作
       */
       // 有序数据结构： 二叉树 B树 红黑树 堆
-      
+
       // 启发式搜索
 
       // findPath(map,[0,0],[50,50]);
@@ -67,7 +67,7 @@
         }
       }
 
-      // 二叉堆
+      //二叉堆
       class BinaryHeap {
         constructor(data, compare) {
           this.data = data;
@@ -172,6 +172,9 @@
       async function findPath(map, start, end) {
         map = map.slice();
 
+        let table = new Array(10000).fill(Infinity);
+        table[start[1] * 100 + start[0]] = 0;
+
         // 找到终点的距离
         function distance([x, y]) {
           return (x - end[0]) ** 2 + (y - end[1]) ** 2;
@@ -187,17 +190,23 @@
           "green";
         container.children[end[1] * 100 + end[0]].style.backgroundColor = "red";
         //pre 从哪个点来的
-        async function insert([x, y], pre) {
+        async function insert([x, y], pre, fromStart) {
           //检查点是否访问过
-          if (map[100 * y + x] !== 0) {
+          if (map[100 * y + x] === 1) {
             return;
           }
           //检查点是否到达边界
           if (x < 0 || y < 0 || x >= 100 || y >= 100) {
             return;
           }
-          //
+          //覆盖
+          if (fromStart >= table[100 * y + x]) {
+            return;
+          }
+          
           map[100 * y + x] = pre;
+          table[100 * y + x] = fromStart; //写进去
+
           container.children[y * 100 + x].style.backgroundColor = "lightgreen";
           await sleep(5);
           collection.insert([x, y]);
@@ -206,41 +215,41 @@
           // let [x, y] = queue.pop() // 深度优先
 
           // let [x, y] = queue.shift() //广度优先 //pop unshift/push shift
-          let [x, y] = collection.take();
+          let [x, y] = collection.take(); //取出来
+          let fromStart = table[100 * y + x];
           // console.log(x, y);
           if (x === end[0] && y === end[1]) {
             let path = [];
             while (x !== start[0] || y !== start[1]) {
               path.push([x, y]);
-              // await sleep(30); // 通过pre往回一直找到起点
+              await sleep(10); // 通过pre往回一直找到起点
               container.children[y * 100 + x].style.backgroundColor = "pink";
               [x, y] = map[y * 100 + x];
             }
             return path;
           }
 
-          await insert([x - 1, y], [x, y]);
-          await insert([x + 1, y], [x, y]);
-          await insert([x, y - 1], [x, y]);
-          await insert([x, y + 1], [x, y]);
+          await insert([x - 1, y], [x, y], fromStart + 1); //加一段
+          await insert([x + 1, y], [x, y], fromStart + 1);
+          await insert([x, y - 1], [x, y], fromStart + 1);
+          await insert([x, y + 1], [x, y], fromStart + 1);
 
           //对角斜线 是否能穿过去
           if (map[(y - 1) * 100 + x] !== 1 || map[y * 100 + x - 1] !== 1) {
-            await insert([x - 1, y - 1], [x, y]);
+            await insert([x - 1, y - 1], [x, y], fromStart + 1.4); //1.4 是 根号2
           }
           if (map[(y - 1) * 100 + x] !== 1 || map[y * 100 + x + 1] !== 1) {
-            await insert([x + 1, y - 1], [x, y]);
+            await insert([x + 1, y - 1], [x, y], fromStart + 1.4);
           }
           if (map[(y + 1) * 100 + x] !== 1 || map[y * 100 + x - 1] !== 1) {
-            await insert([x - 1, y + 1], [x, y]);
+            await insert([x - 1, y + 1], [x, y], fromStart + 1.4);
           }
           if (map[(y + 1) * 100 + x] !== 1 || map[y * 100 + x + 1] !== 1) {
-            await insert([x + 1, y + 1], [x, y]);
+            await insert([x + 1, y + 1], [x, y], fromStart + 1.4);
           }
         }
         return null;
       }
-
     </script>
   </body>
 </html>
