@@ -79,12 +79,11 @@ Attribute，Property区别：
 
 ```
 
-
 #### 如何设计组件状态
 
           
-| Markup set | Js set | JS Change | User Input Change |         |
-| :----:     | :----: | :----:    | :----:            | :----:   |
+| Markup set | Js set | JS Change | User Input Change |          |
+| :-:        | :-:    | :-:       | :-:               | :-:      |
 | x          | v      |  v        |  ?                | property |
 | v          | v      |  v        |  ?                |attribute |
 | x          | x      |  x        |  v                |state     |
