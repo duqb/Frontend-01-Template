@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cssAnimationDemo</title>
+
+<style>
+  #el {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+  }
+</style>
+</head>
+<body>
+  <button onclick="start()">start</button>
+  <button onclick="stop()">stop</button>
+  <div id="el"></div>
+  <script>
+    let el = document.getElementById("el");
+    el.style.transition = "ease 3s";
+
+    function start() {
+      el.style.transform = "translate(300px, 300px)";
+    }
+    function stop() {
+      let computedStyle = window.getComputedStyle(el);
+      el.style.transform = computedStyle.getPropertyValue("transform");
+    }
+  </script>
+</body>
+</html>
