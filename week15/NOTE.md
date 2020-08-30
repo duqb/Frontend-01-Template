@@ -1,5 +1,7 @@
 # 第十五周总结
 
+#### Vue 风格的 SFC 与 动画
+
 timeline 和 animation 这两个类，分别实现2个功能，一个是任务队列（时间线），另一个就是动画。 
 timeline 是若干 animation 进行操作。timeline 的必要性，方便管理 animation 实现暂停、执行、预加载、释放资源。
 
